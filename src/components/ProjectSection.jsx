@@ -1,5 +1,5 @@
 import { Description } from "@radix-ui/react-toast";
-import { ExternalLink, Github, Key } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Key } from "lucide-react";
 
 const projects =[
     {
@@ -18,19 +18,19 @@ const projects =[
         image:"/Projects/portfoliopic.png",
         tags:["React", "TailWindCSS", "JavaScript"],
         demoUrl: "#",
-        githubUrl: "https://github.com/Pranavrajath/Portfolio"
+        githubUrl: "https://github.com/Pranavrajath/Portfolio-main"
     },
 ]
 
 
 export const ProjectSection = () => {
 
-    return <section id="projects" className="py-25 px-4 relative ">
+    return <section id="projects" className="py-15 px-4 relative ">
         <div className="container mx-auto max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center"> 
             Featured<span className="text-primary"> Projects</span>
             </h2>
-            <p className="text-xl p-10">
+            <p className="text-xl p-2">
                 At the moment, I've completed only a few projects 
                 - Some are still under construction. Check back later for more!
             </p>
@@ -42,7 +42,7 @@ export const ProjectSection = () => {
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                         </div>
-                        <div className="p-6">
+                        <div className="p-3">
                             <div className="flex flex-wrap gap-2 md-4">
                                 {project.tags.map((tag) => (
                                     <span className="px-2 py-1 text-xs font-medium rounded-full bg-primary/20 text-secondary-foreground"> {tag} </span>
@@ -63,6 +63,13 @@ export const ProjectSection = () => {
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className="text-center mt-12">
+                <a className="cosmic-button w-fit flex items-center mx-auto gap-2" 
+                target="_blank"
+                href="https://github.com/Pranavrajath">
+                    Check My github <ArrowRight size={16} />
+                </a>
             </div>
         </div>
     </section> ;
