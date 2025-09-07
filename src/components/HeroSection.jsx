@@ -20,9 +20,15 @@ export function HeroSection() {
                     Currently studying Information Science and constantly chasing new challenges.
                 </p>
                 <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-                    <a href="#projects" className="cosmic-button">
-                        View My Work
-                    </a>
+                    <button
+                    className="cosmic-button"
+                    onClick={() => {
+                    const el = document.getElementById('projects');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    >
+                    View My Work
+                    </button>
                 </div>
             </div>
         </div>

@@ -37,12 +37,21 @@ export const NavBar = () => {
         </a>
         {/*desktop nav*/}
         <div className="hidden md:flex space-x-8">
-            {navItems.map((item,key) =>  (
-                <a key={key} href={item.href} 
-                className="text-forground/80 hover:text-primary transition-colors duration-300">
-                {item.name}</a>
-            ))}
-        </div>
+  {navItems.map((item, key) => (
+    <button
+      key={item.name}
+      onClick={() => {
+        const el = document.getElementById(item.href.replace('#', ''));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      }}
+      className="bg-transparent border-none text-forground/80 hover:text-primary transition-colors duration-300 cursor-pointer"
+      style={{ background: 'none', border: 'none', padding: 0 }}
+    >
+      {item.name}
+    </button>
+  ))}
+</div>
 
         {/*mobile nav*/}
 
@@ -58,16 +67,22 @@ export const NavBar = () => {
                 isMenuOpen ? "opacity-100  pointer-events-auto" : "opacity-0 pointer-events-none"
             )}>
         <div className="flex flex-col space-y-8 text-xl">
-            {navItems.map((item,key) =>  (
-                <a key={key} href={item.href} 
-                className="text-forground/80 hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-                aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-                >
-                {item.name}
-                </a>
-            ))}
-        </div>
+  {navItems.map((item, key) => (
+    <button
+      key={item.name}
+      onClick={() => {
+        const el = document.getElementById(item.href.replace('#', ''));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      }}
+      className="bg-transparent border-none text-forground/80 hover:text-primary transition-colors duration-300 cursor-pointer"
+      style={{ background: 'none', border: 'none', padding: 0 }}
+      aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+    >
+      {item.name}
+    </button>
+  ))}
+</div>
         </div>
         
        </div>

@@ -29,13 +29,19 @@ export const AboutSection =() => {
                 For more quires contact me and you can also get my Resume below.
               </p>
               <div className="flex gap-4 justify-center md:justify-center">
-                <a href="#contact" className="cosmic-button">
-                  Get in Touch
-                </a>
-                <a href="/Pranav_rajath_Resume.pdf" download="Pranav_rajath_Resume.pdf"
+                <button
+                  className="cosmic-button"
+                  onClick={() => {
+                  const el = document.getElementById('contact');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  >
+                    Get in Touch
+                  </button>
+                <a href="/Portfolio/Pranav_rajath_Resume.pdf" download="Pranav_rajath_Resume.pdf"
                   className="px-6 py-2 rounded-full border border-primary text-primary bg-primary/10 transition-colors duration-300"
-                >
-                  Download Resume
+                  >
+                   Download Resume
                 </a>
               </div>
             </div>

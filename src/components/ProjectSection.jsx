@@ -1,21 +1,22 @@
 import { Description } from "@radix-ui/react-toast";
 import { ArrowRight, ExternalLink, Github, Key } from "lucide-react";
 
+
 const projects =[
     {
         id:1,
         title:"BuildBox",
         Description:"A Website-Builder webpage to build website without coding",
-        image:"/projects/buildboxpic.png",
+        image:"/Portfolio/projects/buildboxpic.png",
         tags:["React", "TailWindCSS", "MongoDB"],
         demoUrl: "#",
-        githubUrl: "https://github.com/Pranavrajath/mini-project"
+        githubUrl: "https://github.com/Pranavrajath/Buildbox"
     },
     {
         id:2,
         title:"Portfolio",
         Description:"A portfolio that helps me showcase my skills and projects",
-        image:"/projects/portfoliopic.png",
+        image:"/Portfolio/projects/portfoliopic.png",
         tags:["React", "TailWindCSS", "JavaScript"],
         demoUrl: "#",
         githubUrl: "https://github.com/Pranavrajath/Portfolio"
@@ -56,7 +57,9 @@ export const ProjectSection = () => {
                         </p>
                         <div className="flex justify-between items-center">
                             <div className="flex space-x-3 pb-2 pl-2">
-                                <a href= {project.githubUrl} className="text-foreground/80 hover:text-primary transition-colors duration-300">
+                                <a href= {project.githubUrl} 
+                                target="_blank"
+                                className="text-foreground/80 hover:text-primary transition-colors duration-300">
                                     <Github/>
                                 </a>
                             </div>
