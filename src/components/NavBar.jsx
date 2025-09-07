@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react"
+import logo from '../assets/logo.png';
+
 const navItems =[
     { name: 'Home', href: "#hero" },
     { name: 'About', href: "#about" },
@@ -31,8 +33,12 @@ export const NavBar = () => {
     > 
        <div className="container flex items-center justify-between "> 
         <a className="text-xl font-bold text-primary flex items-center" href="#hero">
-            <span className="relative z-10">
-                <span className="text-glow text-foreground"> Pranav's </span> Portfolio
+            <span className="relative z-10 w-17">
+                <span className="text-glow text-foreground">
+                    <img src={logo} alt="Logo" className="logo" width="auto" height="auto"/>
+
+
+                </span> 
             </span>
         </a>
         {/*desktop nav*/}
