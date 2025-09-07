@@ -32,7 +32,7 @@ export const NavBar = () => {
     )} 
     > 
        <div className="container flex items-center justify-between "> 
-        <a className="text-xl font-bold text-primary flex items-center" href="#hero">
+        <a className="text-xl font-bold text-primary flex items-center" >
             <span className="relative z-10 w-17">
                 <span className="text-glow text-foreground">
                     <img src={logo} alt="Logo" className="logo" width="auto" height="auto"/>
