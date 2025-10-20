@@ -49,4 +49,5 @@ export const AboutSection =() => {
         </div>
       </section>
     );
+    
 }
