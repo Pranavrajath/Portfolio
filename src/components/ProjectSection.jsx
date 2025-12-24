@@ -34,7 +34,7 @@ const projects =[
     Description: "A inovative cloud type service that serves connection between devices - CLIENT",
     image: "/Portfolio/Projects/mycloud-client.jpg",
     tags: ["React", "JSON", "JavaScript"],
-    githubUrl: "https://github.com/Pranavrajath/mycloud-server-main",
+    githubUrl: "https://github.com/Pranavrajath/mycloud-client-main",
   },
 ]
 
