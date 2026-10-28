@@ -1,6 +1,6 @@
 import { InstagramIcon, Linkedin, Mail, MapIcon, Phone, Send, Twitter } from "lucide-react"
 import { cn } from "../lib/utils"
-import { useToast } from "@/hooks/use-Toast";
+import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
 export const ContactSection = () => {
@@ -11,7 +11,6 @@ export const ContactSection = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         setIsSubmitting(true);
-        setResult("Sending...");
 
         const formData = new FormData(event.target);
         formData.append("access_key", "55f96b4e-475b-4fb0-82a7-56dcd08698d0");
@@ -24,7 +23,6 @@ export const ContactSection = () => {
         const data = await response.json();
 
         if (data.success) {
-            setResult("Form Submitted Successfully");
             toast({
                 title: "Message Sent!",
                 description: "Thank you for your message! I'll get back to you soon."

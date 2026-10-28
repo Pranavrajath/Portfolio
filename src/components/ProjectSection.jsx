@@ -35,6 +35,14 @@ const projects =[
     image: `${import.meta.env.BASE_URL}Projects/mycloud-client.jpg`,
     tags: ["React", "JSON", "JavaScript"],
     githubUrl: "https://github.com/Pranavrajath/mycloud-client-main",
+  },{
+    id: 5,
+    title: "Sahaydri Samrakshane",
+    Description: "A website that helps to protect the Western Ghats and its biodiversity",
+    image: `${import.meta.env.BASE_URL}Projects/westernGhats.jpg`,
+    tags: ["Kotlin", "Firebase", "JavaScript"],
+     
+    githubUrl: "https://github.com/Pranavrajath/Sahayadri_Samrakshane",
   },
 ]
 
