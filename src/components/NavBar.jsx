@@ -31,7 +31,7 @@ export const NavBar = () => {
     , isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs " : "py-5"
     )} 
     > 
-       <div className="container flex items-center justify-between "> 
+       <div className="container flex items-center justify-between px-[8vw]"> 
         <a className="text-xl font-bold text-primary flex items-center" >
             <span className="relative z-10 w-17">
                 <span className="text-glow text-foreground">
