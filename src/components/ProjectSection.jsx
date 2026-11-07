@@ -43,7 +43,14 @@ const projects =[
     tags: ["Kotlin", "Firebase", "JavaScript"],
      
     githubUrl: "https://github.com/Pranavrajath/Sahayadri_Samrakshane",
-  },
+  },{
+  id: 6,
+  title: "Shop Moree",
+  Description: "A modern and responsive e-commerce website built using React, featuring product browsing, category filtering, product search, and separate Admin and User login interfaces.",
+  image: `${import.meta.env.BASE_URL}Projects/ShopMoree.png`,
+  tags: ["React", "JavaScript", "HTML", "CSS", "Vite"],
+  githubUrl: "https://github.com/Pranavrajath/ShopMoree",
+}
 ]
 
 
