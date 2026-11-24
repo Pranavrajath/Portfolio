@@ -87,6 +87,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+          name: github-pages
 
       # 12. Deploy
       - name: Deploy
