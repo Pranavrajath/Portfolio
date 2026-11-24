@@ -131,7 +131,7 @@ export const ProjectSection = () => {
             className="cosmic-button w-fit flex items-center gap-2"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://pranavrajath.me/projects/"
+            href="https://pranavrajath.github.io/Projects/"
           >
             Visit My Projects <ExternalLink size={16} />
           </a>
