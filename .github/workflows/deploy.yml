@@ -1,0 +1,93 @@
+
+name: Deploy Portfolio and Projects to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout Portfolio repository
+      - name: Checkout Portfolio
+        uses: actions/checkout@v4
+
+      # 2. Checkout Projects repository
+      
+      - name: Checkout Private Projects
+        uses: actions/checkout@v4
+        with:
+          repository: Pranavrajath/Projects
+          ref: main
+          token: ${{ secrets.PROJECTS_TOKEN }}
+          path: Projects
+
+
+      # 3. Setup Node.js
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            Projects/package-lock.json
+
+      # 4. Install Portfolio dependencies
+      - name: Install Portfolio Dependencies
+        run: npm ci
+
+      # 5. Build Portfolio
+      - name: Build Portfolio
+        run: npm run build
+
+      # 6. Install Projects dependencies
+      - name: Install Projects Dependencies
+        working-directory: Projects
+        run: npm ci
+
+      # 7. Build Projects
+      - name: Build Projects
+        working-directory: Projects
+        run: npm run build
+
+      # 8. Combine both builds
+      - name: Combine Build Files
+        run: |
+          mkdir -p dist/projects
+          cp -R Projects/dist/. dist/projects/
+
+      # 9. Preserve custom domain
+      - name: Preserve Custom Domain
+        run: |
+          if [ -f CNAME ]; then
+            cp CNAME dist/CNAME
+          fi
+
+      # 10. Configure GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 11. Upload combined build
+      - name: Upload Build
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      # 12. Deploy
+      - name: Deploy
+        uses: actions/deploy-pages@v4
