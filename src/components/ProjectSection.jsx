@@ -96,7 +96,9 @@ export const ProjectSection = () => {
                 </div>
               </div>
               <div className="block h-40">
-                <h3 className="text-xl mt-2 h-10 font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-xl mt-2 h-10 font-semibold mb-2">
+                  {project.title}
+                </h3>
                 <p className="text-muted-foreground h-25 flex justify-center items-center text-sm pb-7 px-4">
                   {project.Description}
                 </p>
@@ -115,13 +117,23 @@ export const ProjectSection = () => {
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
           <a
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            className="cosmic-button w-fit flex items-center gap-2"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/Pranavrajath"
           >
-            Check My github <ArrowRight size={16} />
+            Check My GitHub <ArrowRight size={16} />
+          </a>
+
+          <a
+            className="cosmic-button w-fit flex items-center gap-2"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://pranavrajath.me/projects/"
+          >
+            Visit My Projects <ExternalLink size={16} />
           </a>
         </div>
       </div>
